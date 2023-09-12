@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "ogstore-99015"
+  },
+  "targets": {
+    "ogstore-99015": {
+      "hosting": {
+        "ogstore": [
+          "ogstore-99015"
+        ]
+      }
+    }
+  }
+}
