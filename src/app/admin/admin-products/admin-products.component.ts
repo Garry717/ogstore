@@ -14,6 +14,7 @@ export class AdminProductsComponent implements OnDestroy{
   filteredProducts: any[];
   subscription: Subscription;
   dtOptions: DataTables.Settings = {};
+  items: any;
 
   constructor(private productService: ProductService){
     this.subscription  = this.productService.getAll().subscribe(products => 
