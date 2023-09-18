@@ -1,23 +1,14 @@
 <p>
     <a routerLink="/admin/products/new" class="btn btn-primary"> New Product</a>
 </p>
-<p>
+<!-- <p>
     <input 
         #query
         (keyup)="filter(query.value)"
         type="text" class="form-control" placeholder="Search...">
-</p>
+</p> -->
 
-
-<!-- <table datatable class="row-border hover" 
-    [items] = "items"
-    [itemCount] = "itemCount"
-    [reload] = "reloadItems($event)"
->
-    <table 
-</table> -->
-
-<table class="table">
+<table datatable [dtOptions]="dtOptions" class="row-border hover">
     <thead>
         <tr>
             <th>Title</th>
@@ -35,3 +26,22 @@
         </tr>
     </tbody>
 </table>
+  
+<!-- <table class="table">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Price</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let p of filteredProducts">
+            <td>{{ p.data.title }}</td>
+            <td>{{ p.data.price }}</td>
+            <td>
+                <a [routerLink]="['/admin/products/', p.key]">Edit</a>
+            </td>
+        </tr>
+    </tbody>
+</table> -->

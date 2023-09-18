@@ -15,7 +15,8 @@ import { AdminProductsComponent } from './admin/admin-products/admin-products.co
 import { AdminOrdersComponent } from './admin/admin-orders/admin-orders.component';
 import { LogincomponentComponent } from './frontpage/logincomponent/logincomponent.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { FormsModule } from '@angular/forms';;
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AuthService } from './auth.service';
 import { AngularFireModule } from '@angular/fire/compat';
@@ -55,6 +56,7 @@ import { DataTablesModule } from 'angular-datatables';
     AngularFireStorageModule,
     AngularFireDatabaseModule,
     DataTablesModule,
+    HttpClientModule,
   ],
   providers: [
     AuthService, 
