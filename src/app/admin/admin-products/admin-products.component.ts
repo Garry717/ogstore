@@ -32,11 +32,11 @@ export class AdminProductsComponent implements OnInit{
   ngOnInit(): void {
     this.dtOptions = {
       ajax: (dataTablesParameters: any, callback) => {
-        that.http
-        <DataTablesResponse>(
-            'https://console.firebase.google.com/u/2/project/ogstore-99015/database/ogstore-99015-default-rtdb/data/~2F',
+        this.http.post<DataTablesResponse>(
+            'https://ogstore-99015-default-rtdb.asia-southeast1.firebasedatabase.app/.json',
             dataTablesParameters, {}
           ).subscribe(resp => {
+            console.log(resp);
             callback({
               recordsTotal: resp.recordsTotal,
               recordsFiltered: resp.recordsFiltered,
@@ -45,11 +45,8 @@ export class AdminProductsComponent implements OnInit{
           });
       },
       columns: [{
-        title: 'ID',
-        data: 'id'
-      }, {
-        title: 'First name',
-        data: 'firstName'
+        title: 'Title',
+        data: 'resp.data'
       }, {
         title: 'Last name',
         data: 'lastName'
